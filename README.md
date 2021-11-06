@@ -1,10 +1,12 @@
 # modmultinverse
 A code that calculates the Modular multiplicative inverse of a number using the Euclidean Algorithm in Rust
 
-The modular multiplicative inverse of an integer a is an integer x such that the product ax is equal to 1 with respect to the modulus m
+The modular multiplicative inverse of an integer a is an integer x such that the product ax is equal to 1 with respect to the modulus m. 
+
 **a.x ≡ 1 mod m**
 
 EUCLIDEAN ALGORITHM calculates the greatest common factor between two integers a and b (the largest number that divides them without any remainder) 
+
 The Euclidean Algorithm for finding GCD(a, b) states that: 
 if a = 0 then GCD(a,b)= b, because GCD(0, b) = b,
 and if b  = 0 then GCD(a,b) = a because GCD(a,0) = a
