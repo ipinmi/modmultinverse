@@ -18,9 +18,9 @@
 
 // The function takes in the following variables, a As the integer, x as the modular multiplicative inverse of the integer and m as the modulo 
 // whole numbers can either be represented as signed integers as i32 or i64, 
-// isize will be used to create a memory address for these values which would be "pointed" to/ referenced to later. 
+// isize will be used to create a memory address for these values which would be "pointed" to/ referenced to later.
 
-fn mulinv(a0: isize, m0: isize) -> isize {
+fn mulinv(a0: i32, m0: i32) -> i32 {
     // if the modulo is 1 then the modular multiplicative inverse (MMI) of the integer will be equal to one. 
     if m0 == 1 { return 1 } // Rust ternary operator 
 
@@ -62,5 +62,19 @@ fn mulinv(a0: isize, m0: isize) -> isize {
 
 
 fn main() {
-    println!("The modular multiplicative inverse of a modulo m is {}", mulinv(17,43))
+    println!("Enter a number:");
+    let mut number = String::new();
+    std::io::stdin().read_line(&mut number).unwrap();
+
+    println!("Enter the modulus:");
+    let mut modulus = String::new();
+    std::io::stdin().read_line(&mut modulus).unwrap();
+
+    //converting the string value to an integer 
+    let integer: i32 = number.trim().parse().unwrap();
+    let modulo: i32 = modulus.trim().parse().unwrap();
+
+    let modular_inverse = mulinv(integer, modulo);
+
+    println!("The modular multiplicative inverse of {} modulo {} is {}", integer, modulo, modular_inverse);
 }
